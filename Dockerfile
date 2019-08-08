@@ -24,8 +24,10 @@ VOLUME /home/sedemo/.ssh
 COPY --chown=sedemo ./okta-aws-sedemo /home/sedemo/.okta-aws
 COPY --chown=sedemo aws-sedemo /home/sedemo/.aws/
 COPY --chown=sedemo transformCreds.py /home/sedemo/transformCreds.py
+COPY --chown=sedemo getAWSCreds.sh /home/sedemo/getAWSCreds.sh
 COPY --chown=sedemo files /home/sedemo/files/
 RUN chmod +x /home/sedemo/transformCreds.py
+RUN chmod +x /home/sedemo/getAWSCreds.sh
 
 USER root
 RUN cat /home/sedemo/.aws/netskope-cert-bundle.pem >> /usr/lib/python3.6/site-packages/certifi/cacert.pem 
