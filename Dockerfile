@@ -20,6 +20,7 @@ RUN apk -v --update --no-cache add \
 
 USER sedemo
 RUN mkdir -p /home/sedemo/.aws
+VOLUME /home/sedemo/.ssh
 COPY --chown=sedemo ./okta-aws-sedemo /home/sedemo/.okta-aws
 COPY --chown=sedemo aws-sedemo /home/sedemo/.aws/
 COPY --chown=sedemo transformCreds.py /home/sedemo/transformCreds.py
