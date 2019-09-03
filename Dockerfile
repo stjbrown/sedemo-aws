@@ -14,7 +14,7 @@ RUN apk -v --update --no-cache add \
         && \
     python3 -m ensurepip && \
     pip3 install --upgrade pip && \
-    pip3 install --upgrade awscli botocore boto3 okta-awscli && \
+    pip3 install --upgrade awscli botocore boto3 pexpect okta-awscli && \
     adduser -u 1001 -D -h /home/nsuser nsuser && \
     adduser -u 1002 -D -h /home/sedemo sedemo
 
